@@ -8,32 +8,38 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
+import { Container, Header, Form, Item, Label, Input, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-type Props = {};
-export default class App extends Component<Props> {
+
+
+
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+        <Container style={{ backgroundColor: '#0066FF' }}>
+            <Form>
+                <Item floatingLabel>
+                    <Label style={{color: 'white'}}>Username</Label>
+                    <Input />
+                </Item>
+                <Item floatingLabel last>
+                    <Label>Password</Label>
+                    <Input />
+                </Item>
+                <Button transparent dark>
+                    <Text>Forgot?</Text>
+                </Button>
+                <Button rounded>
+                    <Text>Sign In</Text>
+                </Button>
+                <Button transparent dark>
+                    <Text>Sign Up</Text>
+                </Button>
+            </Form>
+        </Container>
     );
   }
 }
