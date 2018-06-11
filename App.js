@@ -19,24 +19,24 @@ import { Container, Header, Form, Item, Label, Input, Title, Content, Footer, Fo
 export default class App extends Component {
   render() {
     return (
-        <Container style={{ backgroundColor: '#0066FF' }}>
-            <Form>
-                <Item floatingLabel>
-                    <Label style={{color: 'white'}}>Username</Label>
-                    <Input />
+        <Container style={styles.container}>
+            <Form style={styles.form}>
+                <Item floatingLabel style={styles.email}>
+                    <Label style={{color: 'white'}}>EMAIL</Label>
+                    <Input style={{color: 'white'}}/>
                 </Item>
-                <Item floatingLabel last>
-                    <Label>Password</Label>
-                    <Input />
+                <Item floatingLabel style={styles.password}>
+                    <Label style={{color: 'white'}}>PASSWORD</Label>
+                    <Input style={{color: 'white'}}/>
                 </Item>
                 <Button transparent dark>
-                    <Text>Forgot?</Text>
+                    <Text style={{color: 'white'}}>Forgot?</Text>
                 </Button>
-                <Button rounded>
-                    <Text>Sign In</Text>
+                <Button rounded style={{backgroundColor: 'white'}}>
+                    <Text style={{color: '#0066FF'}}>Sign In</Text>
                 </Button>
                 <Button transparent dark>
-                    <Text>Sign Up</Text>
+                    <Text style={{color: 'white'}}>Sign Up</Text>
                 </Button>
             </Form>
         </Container>
@@ -46,19 +46,17 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+      backgroundColor: '#0066FF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  form: {
+      marginTop: '50%',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  email: {
+    marginLeft: '10%',
+    marginRight: '10%',
+  },
+  password: {
+      marginLeft: '10%',
+      marginRight: '10%',
   },
 });
