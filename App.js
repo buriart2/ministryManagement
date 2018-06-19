@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
+  Image,
   View
 } from 'react-native';
 import { Container, Header, Form, Item, Label, Input, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
@@ -19,6 +20,7 @@ import { Container, Header, Form, Item, Label, Input, Title, Content, Footer, Fo
 export default class App extends Component {
   render() {
     return (
+
         <Container style={styles.container}>
             <Form style={styles.form}>
                 <Item floatingLabel style={styles.email}>
@@ -29,15 +31,19 @@ export default class App extends Component {
                     <Label style={{color: 'white'}}>PASSWORD</Label>
                     <Input style={{color: 'white'}}/>
                 </Item>
-                <Button transparent dark>
+                <Button transparent dark style={{marginLeft: '70%'}}>
                     <Text style={{color: 'white'}}>Forgot?</Text>
                 </Button>
-                <Button rounded style={{backgroundColor: 'white'}}>
-                    <Text style={{color: '#0066FF'}}>Sign In</Text>
-                </Button>
-                <Button transparent dark>
-                    <Text style={{color: 'white'}}>Sign Up</Text>
-                </Button>
+                <View style={{flexDirection: "row", alignItems: 'center', justifyContent: 'space-evenly'}}>
+                    <Button rounded style={{backgroundColor: 'white'}}>
+                        <Text style={{color: '#0066FF'}}>Sign In</Text>
+                    </Button>
+                    <Button transparent dark>
+                        <Text style={{color: 'white'}}>Sign Up</Text>
+                    </Button>
+
+                </View>
+
             </Form>
         </Container>
     );
