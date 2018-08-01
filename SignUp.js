@@ -8,7 +8,6 @@ import {
 import { Container, Header, Form, Item, Label, Input, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import * as firebase from 'firebase'
 import Main from './Main.js';
-import SignUp from './SignUp';
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
@@ -20,7 +19,7 @@ if (!firebase.apps.length) {
 }
 
 
-export default class Login extends Component {
+export default class SignUp extends Component {
 
     constructor(props) {
         super(props)
@@ -31,32 +30,21 @@ export default class Login extends Component {
     }
 
     state = {
+        name: '',
         email: '',
         password: '',
         errorMessage: null
     }
 
-    handleLogin = () => {
-        const { email, password } = this.state;
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(email, password)
-            .then(() => this.props.navigation.navigate('Main', {email: firebase.auth().currentUser.email}))
-            .catch((error) => {
-                alert(error);
-
-            });
-
-    };
-
-    signUp = () => {
-        this.props.navigation.navigate('SignUp')
-    };
     render() {
         return (
 
             <Container style={styles.container}>
                 <Form style={styles.form}>
+                    <Item stackedLabel style={styles.name}>
+                        <Label style={{color: 'white'}}>NAME</Label>
+                        <Input onChangeText={name => this.setState({ name })} style={{color: 'white'}}/>
+                    </Item>
                     <Item stackedLabel style={styles.email}>
                         <Label style={{color: 'white'}}>EMAIL</Label>
                         <Input onChangeText={email => this.setState({ email })} style={{color: 'white'}}/>
@@ -65,19 +53,9 @@ export default class Login extends Component {
                         <Label style={{color: 'white'}}>PASSWORD</Label>
                         <Input onChangeText={password => this.setState({ password })} style={{color: 'white'}}/>
                     </Item>
-                    <Button transparent dark style={{marginLeft: '70%'}}>
-                        <Text style={{color: 'white'}}>Forgot?</Text>
+                    <Button transparent dark style={{marginLeft: '30%', marginRight: '30%'}}>
+                        <Text style={{color: 'white'}}>SIGN UP</Text>
                     </Button>
-                    <View style={{flexDirection: "row", alignItems: 'center', justifyContent: 'space-evenly'}}>
-                        <Button rounded onPress={this.handleLogin} style={{backgroundColor: 'white'}}>
-                            <Text style={{color: '#0066FF'}}>Sign In</Text>
-                        </Button>
-                        <Button transparent dark onPress={this.signUp()}>
-                            <Text style={{color: 'white'}}>Sign Up</Text>
-                        </Button>
-
-                    </View>
-
                 </Form>
             </Container>
         );
@@ -90,6 +68,10 @@ const styles = StyleSheet.create({
     },
     form: {
         marginTop: '50%',
+    },
+    name: {
+        marginLeft: '10%',
+        marginRight: '10%',
     },
     email: {
         marginLeft: '10%',
