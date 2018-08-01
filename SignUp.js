@@ -9,15 +9,6 @@ import { Container, Header, Form, Item, Label, Input, Title, Content, Footer, Fo
 import * as firebase from 'firebase'
 import Main from './Main.js';
 
-if (!firebase.apps.length) {
-    firebase.initializeApp({
-        apiKey: "AIzaSyBlEOlvSYnyxjd-LzCCz3nFs0YusTDraE8",
-        authDomain: "ministrymanagement-f5464.firebaseapp.com",
-        databaseURL: "https://ministrymanagement-f5464.firebaseio.com",
-        storageBucket: "ministrymanagement-f5464.appspot.com"
-    });
-}
-
 
 export default class SignUp extends Component {
 
@@ -53,8 +44,8 @@ export default class SignUp extends Component {
                         <Label style={{color: 'white'}}>PASSWORD</Label>
                         <Input onChangeText={password => this.setState({ password })} style={{color: 'white'}}/>
                     </Item>
-                    <Button transparent dark style={{marginLeft: '30%', marginRight: '30%'}}>
-                        <Text style={{color: 'white'}}>SIGN UP</Text>
+                    <Button block transparent dark style={{marginLeft: '30%', marginRight: '30%', backgroundColor: 'white', marginTop: '10%'}}>
+                        <Text style={{color: '#0066FF'}}>CREATE ACCOUNT</Text>
                     </Button>
                 </Form>
             </Container>

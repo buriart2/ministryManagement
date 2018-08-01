@@ -13,7 +13,7 @@ const App = StackNavigator(
     {
         Login: { screen: Login },
         Main: { screen: Main },
-
+        SignUp: { screen: SignUp },
     },
     {
         headerMode: 'screen'

@@ -72,7 +72,7 @@ export default class Login extends Component {
                         <Button rounded onPress={this.handleLogin} style={{backgroundColor: 'white'}}>
                             <Text style={{color: '#0066FF'}}>Sign In</Text>
                         </Button>
-                        <Button transparent dark onPress={this.signUp()}>
+                        <Button transparent dark onPress={() => this.signUp()}>
                             <Text style={{color: 'white'}}>Sign Up</Text>
                         </Button>
 
@@ -98,5 +98,6 @@ const styles = StyleSheet.create({
     password: {
         marginLeft: '10%',
         marginRight: '10%',
+
     },
 });
