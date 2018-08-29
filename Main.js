@@ -1,5 +1,7 @@
 import React from 'react'
-import { StyleSheet, Platform, Image, Text, View } from 'react-native'
+import { StyleSheet, Platform, Image, View } from 'react-native'
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+
 
 export default class Main extends React.Component {
 
@@ -15,15 +17,28 @@ export default class Main extends React.Component {
         };
     }
 
-
+// <View style={styles.container}>
+// <Text>
+// Hi {this.state.email}
+// </Text>
+// </View>
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text>
-                    Hi {this.state.email}
-                </Text>
-            </View>
+            <Container>
+                <Header>
+                    <Left>
+                        <Button transparent>
+                            <Icon name='menu'/>
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Header</Title>
+                    </Body>
+                    <Right/>
+                </Header>
+            </Container>
+
         )
     }
 }
