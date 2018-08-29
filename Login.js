@@ -9,6 +9,7 @@ import { Container, Header, Form, Item, Label, Input, Title, Content, Footer, Fo
 import * as firebase from 'firebase'
 import Main from './Main.js';
 import SignUp from './SignUp';
+import Forgot from './Forgot';
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
@@ -49,9 +50,16 @@ export default class Login extends Component {
 
     };
 
+
+
     signUp = () => {
         this.props.navigation.navigate('SignUp')
     };
+
+    forgot = () => {
+        this.props.navigation.navigate('Forgot')
+    };
+
     render() {
         return (
 
@@ -65,7 +73,7 @@ export default class Login extends Component {
                         <Label style={{color: 'white'}}>PASSWORD</Label>
                         <Input onChangeText={password => this.setState({ password })} style={{color: 'white'}}/>
                     </Item>
-                    <Button transparent dark style={{marginLeft: '70%'}}>
+                    <Button transparent dark style={{marginLeft: '70%'}} onPress={() => this.forgot()}>
                         <Text style={{color: 'white'}}>Forgot?</Text>
                     </Button>
                     <View style={{flexDirection: "row", alignItems: 'center', justifyContent: 'space-evenly'}}>

@@ -7,13 +7,17 @@ import { StackNavigator } from 'react-navigation'
 import Login from './Login'
 import Main from './Main'
 import SignUp from './SignUp'
+import Forgot from './Forgot'
+import Loading from './Loading'
 
 // create our app's navigation stack
 const App = StackNavigator(
     {
+        Loading: { screen: Loading },
         Login: { screen: Login },
         Main: { screen: Main },
         SignUp: { screen: SignUp },
+        Forgot: { screen: Forgot },
     },
     {
         headerMode: 'screen'
